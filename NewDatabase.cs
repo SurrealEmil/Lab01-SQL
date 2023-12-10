@@ -27,7 +27,7 @@ namespace SQL
                         using (SqlCommand command = new SqlCommand("INSERT INTO Klasser (KlassNamn) " +
                                                                    "VALUES (@KlassNamn)", connection))
                         {
-                            // Add the parameter
+                            // Add a parameter
                             command.Parameters.Add("@KlassNamn", SqlDbType.VarChar);
 
                             // Iterate over the class names and execute the query for each
@@ -43,10 +43,10 @@ namespace SQL
                         using (SqlCommand command = new SqlCommand("INSERT INTO Kurser (KursNamn) " +
                                                                    "VALUES (@KursNamn)", connection))
                         {
-                            // Add the parameter
+                            // Add a parameter
                             command.Parameters.Add("@KursNamn", SqlDbType.VarChar);
 
-                            // Iterate over the class names and execute the query for each
+                            // Iterate over the course names and execute the query for each
                             List<string> KursNamn = new List<string> { "C#Basic", "SqlBasic", "HtmlBasic", "WebBasic", "DansBasic" };
 
                             foreach (string CourseName in KursNamn)

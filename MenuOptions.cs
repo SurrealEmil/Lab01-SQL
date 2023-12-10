@@ -22,7 +22,7 @@ namespace SQL
                 while (true)
                 {
                     Console.Clear();
-                    // Visa alla klasser för användaren att välja mellan
+                    // Display all classes for the user to choose from
                     Console.WriteLine("Välj en klass för den nya eleven genom att skriva in ett klassID:");
                     
                     using (SqlCommand getClassCommand = new SqlCommand("SELECT KlassID, KlassNamn " +
@@ -65,7 +65,7 @@ namespace SQL
                     Thread.Sleep(1000);
                 }
 
-                // Lägg till ny elev
+                // Add new student
                 Console.Clear();
                 Console.Write("Ange förnamn för den nya eleven: ");
                 string firstName = Console.ReadLine();
@@ -96,7 +96,7 @@ namespace SQL
                         while (courseReader.Read())
                         {
                             Console.Clear();
-                            // Add betyg for kurser
+                            // Add grades for courses
                             Console.WriteLine("Ange betyg för den nya eleven i de följande fem kurserna:\n" +
                                               "C#Basic:\n" +
                                               "SqlBasic:\n" +
@@ -167,13 +167,12 @@ namespace SQL
                         string maxBetyg = CourseReader["MaxBetyg"].ToString();
                         string lowBetyg = CourseReader["LowBetyg"].ToString();
 
-                        // Justera dessa värden efter behov för att uppnå önskad bredd
+                        // Formating for better readability
                         const int kursNamnWidth = 10;
                         const int averageBetygWidth = 4;
                         const int maxBetygWidth = 4;
                         const int lowBetygWidth = 4;
 
-                        // Formatera och skriv ut
                         Console.WriteLine($"Kurse: {kursNamn,-kursNamnWidth} Snittbetyg: {averageBetyg,-averageBetygWidth} Högstabetyg:: {maxBetyg,-maxBetygWidth} Lägstabetyg: {lowBetyg,-lowBetygWidth}");
                     }
                 }
@@ -207,13 +206,12 @@ namespace SQL
                             string betyg = CourseReader["Betyg"].ToString();
                             string tidpunkt = CourseReader["Tidpunkt"].ToString();
 
-                            // Justera dessa värden efter behov för att uppnå önskad bredd
+                            // Formating for better readability
                             const int kursNamnWidth = 10;
                             const int fullNameWidth = 25;
                             const int betygWidth = 4;
                             const int tidpunktWidth = 20;
 
-                            // Formatera och skriv ut
                             Console.WriteLine($"Kurse: {kursNamn,-kursNamnWidth} Namn: {fullName,-fullNameWidth} Betyg: {betyg,-betygWidth} Tidpunkt: {tidpunkt,-tidpunktWidth}");
                         }
                     }
@@ -281,7 +279,7 @@ namespace SQL
                     addWorkerCommand.Parameters.AddWithValue("@Efternamn", lastName);
                     addWorkerCommand.Parameters.AddWithValue("@Kategori", categoryFilter);
 
-                    // Execute the command
+                    // Execute the SQL command
                     int insertedId = (int)addWorkerCommand.ExecuteScalar();
 
                     Console.Clear();
@@ -332,7 +330,7 @@ namespace SQL
                         break;
 
                     case "6":
-                        // No filter for "All of the above"
+                        // No filter for "Alla kategorier"
                         break;
 
                     default:
@@ -353,11 +351,10 @@ namespace SQL
                         string fullName = CourseReader["FullName"].ToString();
                         string jobCategory = CourseReader["Kategori"].ToString();
 
-                        // Justera dessa värden efter behov för att uppnå önskad bredd
+                        // Formating for better readability
                         const int fullNameWidth = 22;
                         const int jobCategoryWidth = 15;
 
-                        // Formatera och skriv ut
                         Console.WriteLine($"Namn: {fullName,-fullNameWidth}Jobb: {jobCategory,-jobCategoryWidth}");
                     }
                 }
@@ -446,11 +443,9 @@ namespace SQL
                     {
                         string klassNamn = CourseReader["KlassNamn"].ToString();
 
-                        // Justera dessa värden efter behov för att uppnå önskad bredd
+                        // Formating for better readability
                         const int klassNamnWidth = 7;
                         
-
-                        // Formatera och skriv ut
                         Console.WriteLine($"Klass: {klassNamn,-klassNamnWidth} Namn: {CourseReader["Förnamn"]} {CourseReader["Efternamn"]}");
                     }
                 }
