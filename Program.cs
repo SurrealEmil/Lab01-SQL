@@ -32,25 +32,25 @@ namespace SQL
                 switch (userInput)
                 {
                     case 1:
-                        MenuOptions.GetAllStudents();
+                        StudentMethods.GetAllStudents();
                         break;
                     case 2:
-                        MenuOptions.GetClassStudent();
+                        StudentMethods.GetClassStudent();
                         break;
                     case 3:
-                        MenuOptions.AddNewWorker();
+                        StaffMethods.AddNewWorker();
                         break;
                     case 4:
-                        MenuOptions.GetWorker();
+                        StaffMethods.GetWorker();
                         break;
                     case 5:
-                        MenuOptions.MonthlyGrade();
+                        StudentMethods.MonthlyGrade();
                         break;
                     case 6:
-                        MenuOptions.AvrageGrade();
+                        StudentMethods.AvrageGrade();
                         break;
                     case 7:
-                        MenuOptions.AddNewStudents();
+                        StudentMethods.AddNewStudents();
                         break;
                     case 8:
                         Console.WriteLine("Programmet avslutas...");

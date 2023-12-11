@@ -10,6 +10,7 @@ namespace SQL
 {
     internal class NewDatabase
     {
+        // In case of new database classes and courses will be added
         public static void AddKlassAndKurs()
         {
             using (SqlConnection connection = new SqlConnection("Data Source=(localdb)\\.; Initial Catalog=School; Integrated Security=True"))
@@ -64,6 +65,7 @@ namespace SQL
                     }
                 }
             }
+            Console.WriteLine("Tryck på Enter för att komma igång");
             Console.ReadLine();
         }
     }
